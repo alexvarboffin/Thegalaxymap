@@ -1,0 +1,65 @@
+<resources>
+
+    <string name="about">О приложении</string>
+    <string name="ad_interstitial_id" />
+    <string name="app_name">Карта звездного неба</string>
+    <string name="cancel">Закрыть</string>
+
+    <string name="close">Закрыть</string>
+
+    <string name="dialog_about">Спасибо, что скачали наше приложение!</string>
+    <string name="download">Скачать</string>
+    <string name="download_done">Файл сохранен в папке загрузок, откройте его, нажав на файл в уведомлениях.</string>
+    <string name="download_fail">Загрузка не удалась</string>
+    <string name="download_permission_explaination">Чтобы загружать файлы, вам необходимо предоставить нам разрешение на использование вашего хранилища.\n\nПосле предоставления нам доступа, вы можете продолжить загрузку файла.</string>
+    <string name="drawer_close">Закрыть меню</string>
+    <string name="drawer_open">Открыть меню</string>
+    <string name="error">Произошла ошибка</string>
+    <string name="exit_message">Thank you for using our app!</string>
+    <string name="fab_transformation_scrim_behavior">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
+    <string name="fab_transformation_sheet_behavior">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
+    <string name="firebase_database_url">https://dummy-safe-project.firebaseio.com</string>
+    <string name="gcm_defaultSenderId">42</string>
+    <string name="google_api_key">SomeFakeApiKey</string>
+    <string name="google_app_id">1:1:android:1</string>
+    <string name="google_crash_reporting_api_key">SomeFakeApiKey</string>
+    <string name="google_storage_bucket">dummy-safe-project.appspot.com</string>
+    <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="home">Главная</string>
+    <string name="location_not_available_message">Looks like this app doesn\'t have location services configured. Please see OneSignal docs for more information.</string>
+    <string name="location_not_available_open_settings_message">You have previously denied sharing your device location. Please go to settings to enable.</string>
+    <string name="location_not_available_open_settings_option">Settings</string>
+    <string name="location_not_available_title">Location Not Available</string>
+
+    <string name="next">Вперед</string>
+    <string name="no_app_message">Не найдено приложение для выполнения этого действия!</string>
+    <string name="no_connection">Нет интернет-соединения</string>
+    <string name="notification_error_ssl_cert_invalid">Сертификат SSL сервера не может быть проверен. Вы хотите продолжить?</string>
+    <string name="notification_settings">Уведомления</string>
+    <string name="ok">OK</string>
+
+    <string name="previous">Назад</string>
+    <string name="project_id">dummy-safe-project</string>
+    <string name="rate_later">Возможно позже</string>
+    <string name="rate_message">Надеемся, вам понравится использовать %1$s. Хотели бы вы помочь нам, оценив нас в каталоге?</string>
+    <string name="rate_never">Нет, спасибо</string>
+    <string name="rate_title">Нравится наше приложение?</string>
+    <string name="rate_yes">Да</string>
+    <string name="retry">Повторить</string>
+    <string name="s1">Save image</string>
+    <string name="s2">Allow Ad to store image in Picture gallery?</string>
+    <string name="s3">Accept</string>
+    <string name="s4">Decline</string>
+    <string name="s5">Create calendar event</string>
+    <string name="s6">Allow Ad to create a calendar event?</string>
+    <string name="s7">Test Ad</string>
+    <string name="saved">Сохранено в:</string>
+    <string name="search_menu_title">Search</string>
+    <string name="share">Поделиться</string>
+    <string name="share_body">Я обнаружил, что %1$s использует %2$s</string>
+    <string name="sharetitle">Поделись этим!</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="stop">Остановить</string>
+    <string name="yes">Да</string>
+</resources>
