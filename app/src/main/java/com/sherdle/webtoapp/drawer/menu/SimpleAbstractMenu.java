@@ -11,7 +11,7 @@ import ru.thegalaxymap.app.R;
 public abstract class SimpleAbstractMenu {
     protected MenuItemCallback callback;
     protected Menu menu;
-    protected Map<MenuItem, Action> menuContent = new LinkedHashMap();
+    protected Map<MenuItem, Action> menuContent = new LinkedHashMap<>();
 
     /* JADX INFO: Access modifiers changed from: protected */
     public MenuItem add(Menu menu, String str, int i, final Action action) {
