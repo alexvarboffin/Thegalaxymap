@@ -1,35 +1,32 @@
-package com.sherdle.webtoapp.widget;
+package com.sherdle.webtoapp.widget
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
-import androidx.viewpager.widget.ViewPager;
+import android.content.Context
+import android.util.AttributeSet
+import android.view.MotionEvent
+import androidx.viewpager.widget.ViewPager
 
+class SwipeableViewPager(context: Context, attributeSet: AttributeSet?) :
+    ViewPager(context, attributeSet) {
 
-public class SwipeableViewPager extends ViewPager {
-    private static boolean ALWAYS_IGNORE_SWIPE = false;
-
-    public SwipeableViewPager(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
-    }
-
-    @Override // androidx.viewpager.widget.ViewPager, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
+    override fun onTouchEvent(motionEvent: MotionEvent?): Boolean {
         if (swipeEnabled()) {
-            return super.onTouchEvent(motionEvent);
+            return super.onTouchEvent(motionEvent)
         }
-        return false;
+        return false
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+    override fun onInterceptTouchEvent(motionEvent: MotionEvent?): Boolean {
         if (swipeEnabled()) {
-            return super.onInterceptTouchEvent(motionEvent);
+            return super.onInterceptTouchEvent(motionEvent)
         }
-        return false;
+        return false
     }
 
-    boolean swipeEnabled() {
-        return (getAdapter().getCount() == 1 || ALWAYS_IGNORE_SWIPE) ? false : true;
+    fun swipeEnabled(): Boolean {
+        return if (adapter!!.count == 1 || ALWAYS_IGNORE_SWIPE) false else true
+    }
+
+    companion object {
+        private const val ALWAYS_IGNORE_SWIPE = false
     }
 }
