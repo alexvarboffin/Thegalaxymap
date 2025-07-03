@@ -7,6 +7,7 @@ plugins {
 android {
     namespace 'ru.thegalaxymap.app'
     compileSdk 35
+    buildToolsVersion '36.0.0'
 
     defaultConfig {
         applicationId "ru.thegalaxymap.app"
@@ -29,14 +30,12 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.release
+            //isMinifyEnabled = true
         }
         release {
             minifyEnabled false
             //isMinifyEnabled = false
-            proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig signingConfigs.release
         }
     }
@@ -47,7 +46,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    buildToolsVersion '36.0.0'
+
     kotlinOptions {
         jvmTarget = '17'
     }

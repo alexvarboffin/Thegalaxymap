@@ -125,7 +125,7 @@ class WebFragment : Fragment(), AdvancedWebView.Listener, OnRefreshListener {
             this.browser!!.getSettings().setJavaScriptCanOpenWindowsAutomatically(true)
             this.browser!!.getSettings().setSupportMultipleWindows(true)
         }
-        val webToAppWebClient = WebToAppWebClient(this, this.browser)
+        val webToAppWebClient = WebToAppWebClient(this, this.browser!!)
         this.webClient = webToAppWebClient
         this.browser!!.setWebViewClient(webToAppWebClient)
         val webToAppChromeClient = WebToAppChromeClient(
@@ -137,7 +137,7 @@ class WebFragment : Fragment(), AdvancedWebView.Listener, OnRefreshListener {
         )
         this.chromeClient = webToAppChromeClient
         this.browser!!.setWebChromeClient(webToAppChromeClient)
-        if (this.webClient!!.hasConnectivity(this.mainUrl, true)) {
+        if (this.webClient!!.hasConnectivity(this.mainUrl!!, true)) {
             val pushUrl = (requireActivity().getApplication() as App).getPushUrl()
             if (pushUrl != null) {
                 this.browser!!.loadUrl(pushUrl)

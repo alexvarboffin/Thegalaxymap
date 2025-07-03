@@ -353,7 +353,7 @@ public class AdvancedWebView extends WebView {
         setMixedContentAllowed(settings, true);
         setThirdPartyCookiesEnabled(true);
         super.setWebViewClient(new WebViewClient() { // from class: com.sherdle.webtoapp.widget.AdvancedWebView.1
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onPageStarted(WebView webView, String str2, Bitmap bitmap) {
                 if (!AdvancedWebView.this.hasError() && AdvancedWebView.this.mListener != null) {
                     AdvancedWebView.this.mListener.onPageStarted(str2, bitmap);
@@ -363,7 +363,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onPageFinished(WebView webView, String str2) {
                 if (!AdvancedWebView.this.hasError() && AdvancedWebView.this.mListener != null) {
                     AdvancedWebView.this.mListener.onPageFinished(str2);
@@ -373,7 +373,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onReceivedError(WebView webView, int i, String str2, String str3) {
                 AdvancedWebView.this.setLastError();
                 if (AdvancedWebView.this.mListener != null) {
@@ -384,7 +384,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public boolean shouldOverrideUrlLoading(WebView webView, String str2) {
                 if (AdvancedWebView.this.isHostnameAllowed(str2)) {
                     if (AdvancedWebView.this.mCustomWebViewClient != null) {
@@ -399,7 +399,7 @@ public class AdvancedWebView extends WebView {
                 return true;
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onLoadResource(WebView webView, String str2) {
                 if (AdvancedWebView.this.mCustomWebViewClient != null) {
                     AdvancedWebView.this.mCustomWebViewClient.onLoadResource(webView, str2);
@@ -408,7 +408,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public WebResourceResponse shouldInterceptRequest(WebView webView, String str2) {
                 if (Build.VERSION.SDK_INT < 11) {
                     return null;
@@ -419,7 +419,7 @@ public class AdvancedWebView extends WebView {
                 return super.shouldInterceptRequest(webView, str2);
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
                 if (Build.VERSION.SDK_INT < 21) {
                     return null;
@@ -430,7 +430,7 @@ public class AdvancedWebView extends WebView {
                 return super.shouldInterceptRequest(webView, webResourceRequest);
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onFormResubmission(WebView webView, Message message, Message message2) {
                 if (AdvancedWebView.this.mCustomWebViewClient != null) {
                     AdvancedWebView.this.mCustomWebViewClient.onFormResubmission(webView, message, message2);
@@ -439,7 +439,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void doUpdateVisitedHistory(WebView webView, String str2, boolean z) {
                 if (AdvancedWebView.this.mCustomWebViewClient != null) {
                     AdvancedWebView.this.mCustomWebViewClient.doUpdateVisitedHistory(webView, str2, z);
@@ -448,7 +448,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
                 if (AdvancedWebView.this.mCustomWebViewClient != null) {
                     AdvancedWebView.this.mCustomWebViewClient.onReceivedSslError(webView, sslErrorHandler, sslError);
@@ -457,7 +457,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onReceivedClientCertRequest(WebView webView, ClientCertRequest clientCertRequest) {
                 if (Build.VERSION.SDK_INT >= 21) {
                     if (AdvancedWebView.this.mCustomWebViewClient != null) {
@@ -468,7 +468,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onReceivedHttpAuthRequest(WebView webView, HttpAuthHandler httpAuthHandler, String str2, String str3) {
                 if (AdvancedWebView.this.mCustomWebViewClient != null) {
                     AdvancedWebView.this.mCustomWebViewClient.onReceivedHttpAuthRequest(webView, httpAuthHandler, str2, str3);
@@ -477,7 +477,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public boolean shouldOverrideKeyEvent(WebView webView, KeyEvent keyEvent) {
                 if (AdvancedWebView.this.mCustomWebViewClient != null) {
                     return AdvancedWebView.this.mCustomWebViewClient.shouldOverrideKeyEvent(webView, keyEvent);
@@ -485,7 +485,7 @@ public class AdvancedWebView extends WebView {
                 return super.shouldOverrideKeyEvent(webView, keyEvent);
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onUnhandledKeyEvent(WebView webView, KeyEvent keyEvent) {
                 if (AdvancedWebView.this.mCustomWebViewClient != null) {
                     AdvancedWebView.this.mCustomWebViewClient.onUnhandledKeyEvent(webView, keyEvent);
@@ -494,7 +494,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onScaleChanged(WebView webView, float f, float f2) {
                 if (AdvancedWebView.this.mCustomWebViewClient != null) {
                     AdvancedWebView.this.mCustomWebViewClient.onScaleChanged(webView, f, f2);
@@ -503,7 +503,7 @@ public class AdvancedWebView extends WebView {
                 }
             }
 
-            @Override // android.webkit.WebViewClient
+            @Override 
             public void onReceivedLoginRequest(WebView webView, String str2, String str3, String str4) {
                 if (Build.VERSION.SDK_INT >= 12) {
                     if (AdvancedWebView.this.mCustomWebViewClient != null) {

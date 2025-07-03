@@ -2,6 +2,7 @@ package com.sherdle.webtoapp
 
 
 object Config {
+
     var ANALYTICS_ID: String = ""
     @JvmField
     var COLLAPSING_ACTIONBAR: Boolean = false
@@ -54,5 +55,5 @@ object Config {
     @JvmField
     val OPEN_ALL_OUTSIDE_EXCEPT: Array<String?> = arrayOfNulls<String>(0)
     @JvmField
-    var PERMISSIONS_REQUIRED: Array<String?> = arrayOfNulls<String>(0)
+    var PERMISSIONS_REQUIRED: Array<String> = emptyArray()
 }

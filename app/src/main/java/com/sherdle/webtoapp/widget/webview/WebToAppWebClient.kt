@@ -1,5 +1,6 @@
 package com.sherdle.webtoapp.widget.webview
 
+import android.app.AlertDialog
 import android.content.ActivityNotFoundException
 import android.content.DialogInterface
 import android.content.Intent
@@ -12,18 +13,19 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+
 import com.sherdle.webtoapp.Config
 import com.sherdle.webtoapp.fragment.WebFragment
 import com.sherdle.webtoapp.widget.AdvancedWebView
 import ru.thegalaxymap.app.R
+import androidx.core.net.toUri
 
 class WebToAppWebClient(var fragment: WebFragment, var browser: WebView) : WebViewClient() {
-    // android.webkit.WebViewClient
+    
     override fun onPageFinished(webView: WebView?, str: String?) {
     }
 
-    // android.webkit.WebViewClient
+    
     override fun shouldOverrideUrlLoading(
         webView: WebView,
         webResourceRequest: WebResourceRequest
@@ -31,7 +33,7 @@ class WebToAppWebClient(var fragment: WebFragment, var browser: WebView) : WebVi
         return shouldOverrideUrlLoading(webView, webResourceRequest.getUrl().toString())
     }
 
-    // android.webkit.WebViewClient
+    
     override fun shouldOverrideUrlLoading(webView: WebView, str: String): Boolean {
         if (urlShouldOpenExternally(str)) {
             try {
@@ -42,7 +44,7 @@ class WebToAppWebClient(var fragment: WebFragment, var browser: WebView) : WebVi
                     webView.getContext().startActivity(
                         Intent(
                             "android.intent.action.VIEW",
-                            Uri.parse(str.replace("intent://", "http://"))
+                            str.replace("intent://", "http://").toUri()
                         )
                     )
                 } else {
@@ -69,7 +71,7 @@ class WebToAppWebClient(var fragment: WebFragment, var browser: WebView) : WebVi
         if (str.endsWith(".mp3") || str.endsWith(".wav")) {
             try {
                 val intent2 = Intent("android.intent.action.VIEW")
-                intent2.setDataAndType(Uri.parse(str), "audio/mp3")
+                intent2.setDataAndType(str.toUri(), "audio/mp3")
                 webView.getContext().startActivity(intent2)
             } catch (unused3: Exception) {
             }
@@ -78,7 +80,7 @@ class WebToAppWebClient(var fragment: WebFragment, var browser: WebView) : WebVi
         return super.shouldOverrideUrlLoading(webView, str)
     }
 
-    // android.webkit.WebViewClient
+    
     override fun onReceivedError(
         webView: WebView,
         webResourceRequest: WebResourceRequest,
@@ -92,7 +94,7 @@ class WebToAppWebClient(var fragment: WebFragment, var browser: WebView) : WebVi
         )
     }
 
-    // android.webkit.WebViewClient
+    
     override fun onReceivedSslError(
         webView: WebView?,
         sslErrorHandler: SslErrorHandler,
@@ -117,7 +119,7 @@ class WebToAppWebClient(var fragment: WebFragment, var browser: WebView) : WebVi
         builder.create().show()
     }
 
-    // android.webkit.WebViewClient
+    
     override fun onReceivedError(webView: WebView, i: Int, str: String?, str2: String) {
         if (hasConnectivity("", false) && str2 != (webView as AdvancedWebView).lastDownloadUrl) {
             val webFragment = this.fragment

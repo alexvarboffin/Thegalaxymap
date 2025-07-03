@@ -45,7 +45,7 @@ class WebToAppChromeClient(
         this.popupView = webView2
         webView2.getSettings().setJavaScriptEnabled(true)
         this.popupView!!.setWebChromeClient(this)
-        this.popupView!!.setWebViewClient(WebToAppWebClient(this.fragment, this.popupView))
+        this.popupView!!.setWebViewClient(WebToAppWebClient(this.fragment, this.popupView!!))
         this.popupView!!.setLayoutParams(RelativeLayout.LayoutParams(-1, -1))
         this.container.addView(this.popupView)
         (message.obj as WebView.WebViewTransport).setWebView(this.popupView)

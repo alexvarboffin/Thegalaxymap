@@ -329,17 +329,17 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback 
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.playTogether(ObjectAnimator.ofFloat(getFragment().rl, "y", 0.0f), ObjectAnimator.ofFloat(this.mHeaderView, "y", -getActionBarHeight()));
             animatorSet.start();
-            animatorSet.addListener(new Animator.AnimatorListener() { // from class: com.sherdle.webtoapp.activity.MainActivity.5
+            animatorSet.addListener(new Animator.AnimatorListener() {
                 @Override
-                public void onAnimationCancel(Animator animator) {
+                public void onAnimationCancel(@NonNull Animator animator) {
                 }
 
                 @Override
-                public void onAnimationRepeat(Animator animator) {
+                public void onAnimationRepeat(@NonNull Animator animator) {
                 }
 
                 @Override
-                public void onAnimationStart(Animator animator) {
+                public void onAnimationStart(@NonNull Animator animator) {
                 }
 
                 @Override
@@ -414,12 +414,11 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback 
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setMessage(R.string.common_permission_explaination);
-        builder.setPositiveButton(R.string.common_permission_grant, new DialogInterface.OnClickListener() { // from class: com.sherdle.webtoapp.activity.MainActivity.7
-            @Override // android.content.DialogInterface.OnClickListener
-            public void onClick(DialogInterface dialogInterface, int i) {
-                if (Build.VERSION.SDK_INT >= 23) {
-                    activity.requestPermissions(strArr, 1);
-                }
+        // from class: com.sherdle.webtoapp.activity.MainActivity.7
+// android.content.DialogInterface.OnClickListener
+        builder.setPositiveButton(R.string.common_permission_grant, (dialogInterface, i) -> {
+            if (Build.VERSION.SDK_INT >= 23) {
+                activity.requestPermissions(strArr, 1);
             }
         });
         builder.create().show();
@@ -445,7 +444,7 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback 
         while (i < Config.TITLES.length) {
             Object obj = Config.TITLES[i];
             if ((obj instanceof Integer) && !obj.equals(0)) {
-                str = getResources().getString(((Integer) obj).intValue());
+                str = getResources().getString((Integer) obj);
             } else {
                 str = (String) obj;
             }
@@ -466,14 +465,13 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback 
                     startActivity(new Intent("android.intent.action.VIEW", Uri.parse(action.url.replace("intent://", "http://"))));
                     return;
                 } else {
-                    Toast.makeText(this, getResources().getString(R.string.no_app_message), 1).show();
+                    Toast.makeText(this, getResources().getString(R.string.no_app_message), Toast.LENGTH_LONG).show();
                     return;
                 }
             }
         }
-        Iterator<MenuItem> it = this.menu.getMenuItems().iterator();
-        while (it.hasNext()) {
-            it.next().setChecked(false);
+        for (MenuItem item : this.menu.getMenuItems()) {
+            item.setChecked(false);
         }
         menuItem.setChecked(true);
         ((DrawerLayout) findViewById(R.id.drawer_layout)).closeDrawer(GravityCompat.START);
