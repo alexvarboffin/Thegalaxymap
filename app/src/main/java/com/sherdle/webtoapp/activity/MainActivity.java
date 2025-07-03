@@ -363,19 +363,19 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback 
         animatorSet.start();
         animatorSet.addListener(new Animator.AnimatorListener() { // from class: com.sherdle.webtoapp.activity.MainActivity.6
             @Override
-            public void onAnimationCancel(Animator animator) {
+            public void onAnimationCancel(@NonNull Animator animator) {
             }
 
             @Override
-            public void onAnimationRepeat(Animator animator) {
+            public void onAnimationRepeat(@NonNull Animator animator) {
             }
 
             @Override
-            public void onAnimationStart(Animator animator) {
+            public void onAnimationStart(@NonNull Animator animator) {
             }
 
             @Override
-            public void onAnimationEnd(Animator animator) {
+            public void onAnimationEnd(@NonNull Animator animator) {
                 MainActivity.this.CurrentAnimation = MainActivity.NO;
                 MainActivity.this.CurrentAnimatingFragment = null;
             }
